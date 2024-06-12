@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number game</title>
+    <style>
+      body{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        
+      }
+      img{
+        position: relative;
+        
+        height: 250px;
+        width: 400px;
+      }
+      h1{
+        position: absolute;
+        top: 160px;
+        font-style: "Roboto";
+        
+      }
+      p{
+        position:absolute;
+        top: 250px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .box{
+        border: 3px solid;
+        height: 270px;
+        width: 350px;
+        position: absolute;
+        top: 300px;
+        border-radius: 8px;
+        background-color: rgb(17, 100, 152);
+
+      }
+      h2{
+        text-align: center;
+      }
+      h3{
+        position: relative;
+        top: 10px;
+        left: 90px;
+      }
+      .in{
+        position: relative;
+        left: 20px;
+        left: 80px;
+      }
+      button{
+        position: relative;
+        top: 10px;
+        left :110px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 4px;
+        
+      }
+      .c{
+        border: 0px solid;
+        height: 30px;
+        width: 150px;
+        position: relative;
+        top: 30px;
+        left: 50px;
+        font-size: larger;
+        
+        
+      }
+    </style>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_AC00P7kedrnBhmdycwcFsN5efkVnKgalp0e0uMkb-ssezdMF9H0WrVXpK_cZk02Z3ys&usqp=CAU">
+    <h1>GUESSING GAME</h1>
+    <p>GET A RANDOM NUMBER BETWEEN 1 AND 100</p>
+    <div class="box">
+        <h2>GET A NUMBER</h2>
+        <h3>Enter any number</h3>
+        <input type="number" class="in" id="input"><br>
+        <button onclick="check()">
+            Click
+        </button>
+        <h4 id="gameresult" class="c"></h4>
+
+    </div>
+    <script>
+        let gameResult = document.getElementById("gameresult");
+        let userInput = document.getElementById("input");
+        let randomNumber = Math.ceil(Math.random()*100);
+        function check(){
+            let guessnumber = parseInt(userInput.value);
+            if(guessnumber>randomNumber){
+                gameResult.textContent="TOO HIGH!! ";
+                
+            }
+            else if(guessnumber<randomNumber){
+                gameResult.textContent="TOO LOW!!";
+                
+            }
+            else if(guessnumber==randomNumber){
+                gameResult.textContent="YOU ARE CORRECT."
+                
+            }
+
+
+        }
+    </script>
+    
+</body>
+</html>
